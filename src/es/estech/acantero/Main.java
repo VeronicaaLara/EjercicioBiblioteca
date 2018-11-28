@@ -1,27 +1,43 @@
 package es.estech.acantero;
 
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
 public class Main {
 
     /**
-     * Escribe un programa para una biblioteca que contenga libros y revistas.
-     * Las características comunes que se almacenan tanto para las revistas como para los
-     * libros son el código, el título, y el año de publicación. Estas tres características se pasan
-     * por parámetro en el momento de crear los objetos.
-     * Los libros tienen además un atributo prestado. Los libros, cuando se crean, no están
-     * prestados.
-     * Las revistas tienen un número. En el momento de crear las
-     * revistas se pasa el número por parámetro.
-     * Tanto las revistas como los libros deben tener (aparte de los constructores) un
-     * método toString() que devuelve el valor de todos los atributos en una cadena de
-     * caracteres. También tienen un método que devuelve el año de publicación, y otro el
-     * código.
-     * Para prevenir posibles cambios en el programa se tiene que implementar una
-     * interfaz Prestable con los métodos prestar(), devolver() y prestado. La clase Libro
-     * implementa esta interfaz
-     * @param args
+     Escribe una aplicación en la que se implementen dos métodos:
+     cuentaPrestados(): recibe por parámetro un array de objetos, y devuelve cuántos de ellos
+     están prestados.
+     publicacionesAnterioresA(): recibe por parámetro un array de Publicaciones y un año, y
+     devuelve cuántas publicaciones tienen fecha anterior al año recibido por parámetro.
+     En el método main(), crear un array de Publicaciones, con 2 libros y 2 revistas, prestar
+     uno de los libros, mostrar por pantalla los datos almacenados en el array y mostrar por
+     pantalla cuántas hay prestadas y cuantas hay anteriores a 1990.
      */
 
     public static void main(String[] args) {
-	// write your code here
+
+        Book b = new Book (1, "titulo1", 1999);
+        Book b1 = new Book (1, "titulo1", 1999);
+        Book b2 = new Book (1, "titulo1", 1999);
+        Book b3 = new Book (1, "titulo1", 1999);
+        Book b4 = new Book (1, "titulo1", 1999);
+        Book b5 = new Book (1, "titulo1", 1999);
+
+        ListaBooks lb = new ListaBooks();
+        System.out.println(lb);
+
+        b1.prestar();b3.prestar();
+
+        lb.add(b);
+        lb.add(b1);
+        lb.add(b2);
+        lb.add(b3);
+        lb.add(b4);
+        lb.add(b5);
+
+        System.out.println(lb);
+
+
     }
 }
